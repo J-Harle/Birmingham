@@ -5,6 +5,8 @@ with open("petn.cell", "r") as text:
 
 # Loop to create files with updated kpoint values
 for i in np.arange(0.02, 0.81, 0.01):
+    i = np.round(i, 2)  # Round the value of `i` to 2 decimal places to avoid floating-point issues
+
     # Create a new list for the modified content
     updated_body = []
 
@@ -20,3 +22,4 @@ for i in np.arange(0.02, 0.81, 0.01):
     OutputFile = f"{int(i * 100):03d}petn.cell"
     with open(OutputFile, "w") as outputfile:
         outputfile.writelines(updated_body)
+
