@@ -1,3 +1,4 @@
+#This script submits all .cell files in a folder to the queue
 import os
 import subprocess
 import time
@@ -15,11 +16,11 @@ for cell_file in cell_files:
     # Simulating a .bash file for each submission
     batch_script = f"""#!/bin/bash
 #SBATCH --time=2:00:00
-#SBATCH --mail-user=jxh1695@student.bham.ac.uk
+#SBATCH --mail-user=
 #SBATCH --ntasks=25
 #SBATCH --nodes=1-10
 #SBATCH --qos=bbdefault
-#SBATCH --account=michaaal-jharl
+#SBATCH --account=
 #SBATCH --job-name={jobname}
 #SBATCH --mem=50gb
 
